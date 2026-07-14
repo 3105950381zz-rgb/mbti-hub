@@ -6,66 +6,92 @@
 <title>16人格挽回大挑战</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:#f5f0ea;color:#14110f;min-height:100vh}
-.hd{background:linear-gradient(135deg,#2c2418,#4a3728);color:#f5ede4;padding:36px 20px 24px;text-align:center}
-.hd h1{font-size:24px;font-weight:800;letter-spacing:4px}
-.hd p{font-size:13px;color:rgba(245,237,228,.5);margin-top:6px}
-.ct{max-width:640px;margin:0 auto;padding:14px}
-.gr{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.card{background:#fffcf7;border:1px solid rgba(20,17,15,.08);border-radius:12px;padding:14px 6px;text-align:center;text-decoration:none;color:#14110f;transition:all .15s;box-shadow:0 2px 8px rgba(0,0,0,.03);display:block}
-.card:active{transform:scale(.95)}
-.card .e{font-size:24px;margin-bottom:3px}
-.card .n{font-size:12px;font-weight:600}
-.card .t{font-size:10px;color:#9a8a78;margin-top:1px}
-.s{font-size:11px;color:#9a8a78;text-align:center;margin:12px 0 8px;letter-spacing:2px}
-.brand{display:flex;align-items:center;gap:14px;padding:16px;margin:16px 0 8px;border-radius:12px;background:#fffcf7;border:1px solid rgba(20,17,15,.08);box-shadow:0 2px 8px rgba(0,0,0,.03)}
-.brand img{width:100px;height:auto;border-radius:8px;flex-shrink:0;border:1px solid rgba(20,17,15,.1)}
-.brand .bn{font-size:16px;font-weight:700;color:#14110f}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:#f8f4f0;color:#2c2418;min-height:100vh}
+.bg{position:fixed;inset:0;z-index:-1;background:linear-gradient(135deg,#f8f4f0,#f0e8e0,#f8f0e8)}
+.bg::before{content:'';position:absolute;top:-30%;right:-20%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(212,117,143,.08),transparent 70%)}
+.bg::after{content:'';position:absolute;bottom:-20%;left:-10%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(74,144,217,.06),transparent 70%)}
+
+.hd{padding:36px 20px 20px;text-align:center;position:relative}
+.hd h1{font-size:26px;font-weight:800;letter-spacing:2px;background:linear-gradient(135deg,#2c2418,#6a5a48);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hd p{font-size:13px;color:#9a8a78;margin-top:6px;letter-spacing:1px}
+
+.ct{max-width:680px;margin:0 auto;padding:0 14px 20px}
+
+/* Brand card - glassmorphism */
+.brand{background:rgba(255,255,255,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.8);border-radius:20px;padding:18px;margin-bottom:18px;display:flex;align-items:center;gap:16px;box-shadow:0 4px 24px rgba(0,0,0,.04)}
+.brand img{width:96px;height:96px;border-radius:12px;flex-shrink:0;object-fit:cover;border:2px solid rgba(255,255,255,.8)}
+.brand .bn{font-size:18px;font-weight:800;color:#2c2418;letter-spacing:2px}
 .brand .bs{font-size:12px;color:#9a8a78;margin-top:4px;line-height:1.6}
-.ft{font-size:10px;color:#c0b0a0;text-align:center;margin-top:12px;line-height:1.6;padding-bottom:30px}
+
+.s{font-size:12px;font-weight:600;color:#9a8a78;padding:0 4px;margin:14px 0 10px;letter-spacing:3px;display:flex;align-items:center;gap:10px}
+.s::before,.s::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.06),transparent)}
+
+.gr{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:4px}
+.card{background:rgba(255,255,255,.75);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.8);border-radius:16px;padding:14px 6px;text-align:center;text-decoration:none;color:#2c2418;transition:all .25s;box-shadow:0 2px 12px rgba(0,0,0,.03)}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.06);background:rgba(255,255,255,.9)}
+.card:active{transform:scale(.95)}
+.card .e{font-size:22px;margin-bottom:2px;display:block}
+.card .n{font-size:13px;font-weight:700;display:block}
+.card .t{font-size:10px;color:#9a8a78;display:block;margin-top:2px}
+.card .tag{font-size:8px;padding:2px 6px;border-radius:4px;display:inline-block;margin-top:4px;background:#e8f5e9;color:#2e7d32}
+
+.ft{font-size:10px;color:#c0b0a0;text-align:center;margin-top:20px;line-height:1.6;padding-bottom:20px}
+
+@media(max-width:420px){
+  .card{padding:12px 4px}
+  .card .e{font-size:18px}
+  .card .n{font-size:12px}
+  .brand img{width:72px;height:72px}
+  .hd h1{font-size:22px}
+}
 </style>
 </head>
 <body>
+<div class="bg"></div>
 <div class="hd"><h1>🧩 16人格挽回大挑战</h1><p>选一个人格，测测你能不能挽回TA的心</p></div>
 <div class="ct">
 
 <div class="brand">
-  <img src="https://3105950381zz-rgb.github.io/neixin-guaiwu/qrcode.jpg" onerror="this.style.display='none'"/>
+  <img src="qrcode.jpg"/>
   <div>
     <div class="bn">灵 客 星 球</div>
-    <div class="bs">想自己搭这种测试？<br>扫码聊聊 · 小程序/H5/AI产品</div>
+    <div class="bs">想自己搭这种测试？扫码聊聊<br>网站 · 小程序 · H5 · AI产品</div>
   </div>
 </div>
 
-<div class="s">— 分 析 家 —</div>
+<div class="s">分析家</div>
 <div class="gr">
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-intj/"><div class="e">🏛️</div><div class="n">INTJ</div><div class="t">建筑师</div></a>
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-intp/"><div class="e">🔬</div><div class="n">INTP</div><div class="t">逻辑家</div></a>
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-entj/"><div class="e">👑</div><div class="n">ENTJ</div><div class="t">指挥官</div></a>
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-entp/"><div class="e">🎯</div><div class="n">ENTP</div><div class="t">辩论家</div></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-intj/"><span class="e">🏛️</span><span class="n">INTJ</span><span class="t">建筑师</span><span class="tag">🔥</span></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-intp/"><span class="e">🔬</span><span class="n">INTP</span><span class="t">逻辑家</span><span class="tag">🔥</span></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-entj/"><span class="e">👑</span><span class="n">ENTJ</span><span class="t">指挥官</span><span class="tag">🔥</span></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-entp/"><span class="e">🎯</span><span class="n">ENTP</span><span class="t">辩论家</span><span class="tag">🔥</span></a>
 </div>
-<div class="s">— 外 交 家 —</div>
+
+<div class="s">外交家</div>
 <div class="gr">
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-infj/"><div class="e">🦋</div><div class="n">INFJ</div><div class="t">提倡者</div></a>
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-infp/"><div class="e">🌸</div><div class="n">INFP</div><div class="t">调停者</div></a>
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-enfj/"><div class="e">🦁</div><div class="n">ENFJ</div><div class="t">主人公</div></a>
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-enfp/"><div class="e">🐶</div><div class="n">ENFP</div><div class="t">竞选者</div></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-infj/"><span class="e">🦋</span><span class="n">INFJ</span><span class="t">提倡者</span><span class="tag">🔥</span></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-infp/"><span class="e">🌸</span><span class="n">INFP</span><span class="t">调停者</span><span class="tag">🔥</span></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-enfj/"><span class="e">🦁</span><span class="n">ENFJ</span><span class="t">主人公</span><span class="tag">🔥</span></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-enfp/"><span class="e">🐶</span><span class="n">ENFP</span><span class="t">竞选者</span><span class="tag">🔥</span></a>
 </div>
-<div class="s">— 守 护 者 —</div>
+
+<div class="s">守护者</div>
 <div class="gr">
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-istj/"><div class="e">📋</div><div class="n">ISTJ</div><div class="t">物流师</div></a>
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-isfj/"><div class="e">🛡️</div><div class="n">ISFJ</div><div class="t">守卫者</div></a>
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-estj/"><div class="e">📊</div><div class="n">ESTJ</div><div class="t">总经理</div></a>
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-esfj/"><div class="e">🤝</div><div class="n">ESFJ</div><div class="t">执政官</div></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-istj/"><span class="e">📋</span><span class="n">ISTJ</span><span class="t">物流师</span><span class="tag">🔥</span></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-isfj/"><span class="e">🛡️</span><span class="n">ISFJ</span><span class="t">守卫者</span><span class="tag">🔥</span></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-estj/"><span class="e">📊</span><span class="n">ESTJ</span><span class="t">总经理</span><span class="tag">🔥</span></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-esfj/"><span class="e">🤝</span><span class="n">ESFJ</span><span class="t">执政官</span><span class="tag">🔥</span></a>
 </div>
-<div class="s">— 探 险 家 —</div>
+
+<div class="s">探险家</div>
 <div class="gr">
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-istp/"><div class="e">🔧</div><div class="n">ISTP</div><div class="t">鉴赏家</div></a>
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-isfp/"><div class="e">🎨</div><div class="n">ISFP</div><div class="t">探险家</div></a>
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-estp/"><div class="e">🔥</div><div class="n">ESTP</div><div class="t">企业家</div></a>
-<a class="card" href="https://3105950381zz-rgb.github.io/challenge-esfp/"><div class="e">🎉</div><div class="n">ESFP</div><div class="t">表演者</div></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-istp/"><span class="e">🔧</span><span class="n">ISTP</span><span class="t">鉴赏家</span><span class="tag">🔥</span></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-isfp/"><span class="e">🎨</span><span class="n">ISFP</span><span class="t">探险家</span><span class="tag">🔥</span></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-estp/"><span class="e">🔥</span><span class="n">ESTP</span><span class="t">企业家</span><span class="tag">🔥</span></a>
+<a class="card" href="https://3105950381zz-rgb.github.io/challenge-esfp/"><span class="e">🎉</span><span class="n">ESFP</span><span class="t">表演者</span><span class="tag">🔥</span></a>
 </div>
-<div class="ft">灵客星球 · 想自己搭这种测试？扫码聊聊</div>
+
+<div class="ft">灵客星球 · 帮你搭专属引流测试<br>H5/小程序/网站 · 69起</div>
 </div>
 </body>
 </html>
